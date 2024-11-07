@@ -20,6 +20,14 @@ export const get = api(
   }
 );
 
+export const hello = api(
+  { expose: true, method: "GET", path: "/hello" },
+  async (): Promise<Response> => {
+    const msg = `Hello!`;
+    return { message: msg };
+  }
+);
+
 interface Response {
   message: string;
 }
